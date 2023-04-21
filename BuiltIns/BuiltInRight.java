@@ -1,10 +1,10 @@
 package ShankInterpreter;
 import java.util.ArrayList;
 
-public class BuiltInLeft extends FunctionNode {
+public class BuiltInRight extends FunctionNode {
 
-    public BuiltInLeft() {
-        super("Left");
+    public BuiltInRight() {
+        super("Right");
     }
     
     /*
@@ -18,11 +18,11 @@ public class BuiltInLeft extends FunctionNode {
             StringDataType resultArg = (StringDataType) inputData.get(2);
             String inputString = stringArg.getData();
             int length = lengthArg.getData();
-            String resultString = inputString.substring(0, length);
+            String resultString = inputString.substring(length);
             resultArg.setData(resultString);
             inputData.set(2, resultArg);
         } else {
-            System.out.println("Error: Invalid arguments for Left function.");
+            System.out.println("Error: Invalid arguments for Right function.");
             System.exit(1);
         }
     }
